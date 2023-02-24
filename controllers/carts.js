@@ -3,5 +3,5 @@ module.exports = {
   };
   
   function index(req, res) {
-      res.render('index', { title: `Cart`});
+      res.render('cart/index', { title: `Cart`});
   }

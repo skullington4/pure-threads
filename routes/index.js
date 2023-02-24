@@ -1,11 +1,15 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const mensCtrl = require('../controllers/mens');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
+
+// POST /performers
+router.post('/', mensCtrl.create);
 
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
