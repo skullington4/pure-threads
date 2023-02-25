@@ -6,4 +6,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 /* GET home page. */
 router.get('/', womensCtrl.index);
 
+// Show's item details page
+router.get('/:id', womensCtrl.show);
+
 module.exports = router;

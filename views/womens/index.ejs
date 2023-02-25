@@ -3,20 +3,20 @@
 <h2>Welcome to the women's department</h2>
 
 <table id="list">
-    <thead>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.forEach(function(i) { %>
       <tr>
-        <th></th>
-        <th>Title:</th>
+        <td><a href="/womens/<%= i._id %>" class="indexPictures"><img src="<%= i.imageOne %>"></a></td>
+        <td><%= i.title %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% items.forEach(function(i) { %>
-        <tr>
-          <td><img class="womensPictures" src="<%= i.imageOne %>"></td>
-          <td><%= i.title %></td>
-        </tr>
-        <% }); %>
-    </tbody>
+      <% }); %>
+  </tbody>
 </table>
 
 <%- include('../partials/footer') %>

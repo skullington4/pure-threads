@@ -2,7 +2,8 @@ const Item = require('../models/item');
 
 module.exports = {
     index,
-    create
+    create,
+    show
   };
   
 
@@ -37,5 +38,23 @@ module.exports = {
 
     Item.find({ department:'Mens'}, function(err, items) {
       res.render('mens/index', { title: 'All Mens department', items });
+    });
+  }
+
+  function show(req, res) {
+    Item.findById(req.params.id, function(err, item) {
+      res.render('mens/show', {
+        title: 'Item Detail',
+        item
+      });
+    });
+  }
+
+  function addToCast(req, res) {
+    Movie.findById(req.params.id, function(err, movie) {
+      movie.cast.push(req.body.performerId);
+      movie.save(function(err) {
+        res.redirect(`/movies/${movie._id}`);
+      });
     });
   }
