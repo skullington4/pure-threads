@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Men's department</h2>
-
+<h2>Welcome to the women's department</h2>
 
 <table id="list">
     <thead>
@@ -13,12 +12,11 @@
     <tbody>
       <% items.forEach(function(i) { %>
         <tr>
-          <td><img class="mensPictures" src="<%= i.imageOne %>"></td>
+          <td><img class="womensPictures" src="<%= i.imageOne %>"></td>
           <td><%= i.title %></td>
         </tr>
         <% }); %>
     </tbody>
 </table>
-
 
 <%- include('../partials/footer') %>

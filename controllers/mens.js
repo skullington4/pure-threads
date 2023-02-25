@@ -5,9 +5,6 @@ module.exports = {
     create
   };
   
-  function index(req, res) {
-      res.render('mens/index', { title: `Men's Department`});
-  }
 
   function create(req, res) {
     const title = req.body.title;
@@ -33,5 +30,12 @@ module.exports = {
       };
       console.log(item);
       res.redirect('/');
+    });
+  }
+
+  function index(req, res) {
+
+    Item.find({ department:'Mens'}, function(err, items) {
+      res.render('mens/index', { title: 'All Mens department', items });
     });
   }

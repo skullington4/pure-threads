@@ -35,4 +35,13 @@ nav {
 
 a {
   color: black;
+
+}
+
+.mensPictures img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
 }

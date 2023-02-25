@@ -33,7 +33,7 @@ const itemSchema = new Schema({
   },
   department: {
     type: String,
-    enum: ['Mens', 'Womans']
+    enum: ['Mens', 'Womens']
   },
   size: {
     type: String,
@@ -47,11 +47,11 @@ const itemSchema = new Schema({
   },
   color: {
     type: String,
-    enum: ['Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red']
+    enum: ['Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red', 'Pink']
   },
   secondaryColor: {
     type: String,
-    enum: ['', 'Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red']
+    enum: ['', 'Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red', 'Pink']
   },
   brand: {
     type: String
