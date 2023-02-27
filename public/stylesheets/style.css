@@ -53,6 +53,6 @@ a {
   height: 40px;
 }
 
-#cartPicture img {
-  height: 50px;
+.cartPicture img {
+  height: 200px;
 }

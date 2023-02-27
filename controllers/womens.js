@@ -63,8 +63,7 @@ function addToCart(req, res) {
 
       user.cart.push(item);
       user.save(function(err) {
-        // Step 5: Respond with a redirect because we've mutated data
-        res.redirect(`/mens/${id}`);
+        res.redirect(`/womens/${id}`);
       });
     });
   });

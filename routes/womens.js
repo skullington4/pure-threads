@@ -14,4 +14,7 @@ router.post('/:id/reviews', ensureLoggedIn, womensCtrl.createReview);
 // DELETE /reviews/:id
 router.delete('/reviews/:id', ensureLoggedIn, womensCtrl.deleteReview);
 
+// Add to cart
+router.post('/:id/cart', womensCtrl.addToCart);
+
 module.exports = router;

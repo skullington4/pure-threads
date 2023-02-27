@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <tr>
-          <td><img src="<%= item.imageOne %>"></td>
+          <td class="cartPicture"><img src="<%= item.imageOne %>"></td>
           <td><%= item.title %></td>
           <td>$<%= item.price %></td>
           <td><%= item.description %></td>
@@ -25,7 +25,9 @@
     </tbody>
 </table>
 <% if (user) { %>
-<button>Add to Cart</button>
+  <form action="/mens/<%= item._id %>/cart" method="POST">
+    <button type="submit">Add to Cart</button>
+  </form>
 <% } %>
 <br><br><h2>Reviews</h2>
 <% if (user) { %>

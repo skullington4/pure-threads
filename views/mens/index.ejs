@@ -13,7 +13,7 @@
     <tbody>
       <% items.forEach(function(i) { %>
         <tr>
-          <td><a href="/mens/<%= i._id %>" class="indexPictures"><img src="<%= i.imageOne %>"></a></td>
+          <td class="cartPicture"><a href="/mens/<%= i._id %>" class="indexPictures"><img src="<%= i.imageOne %>"></a></td>
           <td><a href="/mens/<%= i._id %>"><%= i.title %></a></td>
         </tr>
         <% }); %>

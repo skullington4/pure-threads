@@ -10,7 +10,7 @@ const userSchema = new Schema({
   email: String,
   avatar: String,
   cart: {
-    type: Object
+    type: Array
   }
 }, {
   timestamps: true

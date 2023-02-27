@@ -39,7 +39,6 @@ function create(req, res) {
 }
 
 function index(req, res) {
-
   Item.find({ department:'Mens'}, function(err, items) {
     res.render('mens/index', { title: 'All Mens department', items });
   });
@@ -75,12 +74,9 @@ function createReview(req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     
-    // We push an object with the data for the
-    // review subdoc into Mongoose arrays
     item.reviews.push(req.body);
     console.log(item.reviews);
     item.save(function(err) {
-      // Step 5: Respond with a redirect because we've mutated data
       res.redirect(`/mens/${item._id}`);
     });
   });
@@ -89,12 +85,13 @@ function createReview(req, res) {
 function addToCart(req, res) {
   req.body.user = req.user._id;
   let id = req.params.id;
+  console.log(req.body.user)
   User.findById(req.body.user, function(err, user) {
     Item.findById(id, function(err, item) {
 
       user.cart.push(item);
       user.save(function(err) {
-        // Step 5: Respond with a redirect because we've mutated data
+        if (err) return res.redirect('/mens');
         res.redirect(`/mens/${id}`);
       });
     });
