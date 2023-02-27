@@ -1,7 +1,13 @@
+const User = require('../models/user');
+
 module.exports = {
     index
   };
   
   function index(req, res) {
-      res.render('cart/index', { title: `Cart`});
+      User.findById(req.user._id, function(err, user) {
+        res.render('cart/index', { title: `Cart`, user});
+        
+    });
   }
+

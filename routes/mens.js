@@ -13,6 +13,8 @@ router.post('/:id/reviews', ensureLoggedIn, mensCtrl.createReview);
 // DELETE /reviews/:id
 router.delete('/reviews/:id', ensureLoggedIn, mensCtrl.delete);
 
+// Add to cart
+router.post('/:id/cart', mensCtrl.addToCart);
 
 
 module.exports = router;

@@ -9,7 +9,9 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String,
-  
+  cart: {
+    type: Object
+  }
 }, {
   timestamps: true
 });

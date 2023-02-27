@@ -24,9 +24,9 @@
         </tr>
     </tbody>
 </table>
-
+<% if (user) { %>
 <button>Add to Cart</button>
-
+<% } %>
 <br><br><h2>Reviews</h2>
 <% if (user) { %>
   <form id="add-review-form" method="POST"

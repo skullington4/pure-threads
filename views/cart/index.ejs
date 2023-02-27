@@ -2,6 +2,22 @@
 
 <h2>Welcome to the Cart</h2>
 
+<table id="list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% user.cart.forEach(function(i) { %>
+        <tr>
+          <td><img src="<%= i.imageOne %>"></td>
+          <td><%= i.title %></td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
 
 
 <%- include('../partials/footer') %>

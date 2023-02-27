@@ -52,3 +52,7 @@ a {
   border-radius: 50%;
   height: 40px;
 }
+
+#cartPicture img {
+  height: 50px;
+}
