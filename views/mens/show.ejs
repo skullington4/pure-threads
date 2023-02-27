@@ -73,6 +73,7 @@
               <form action="/mens/reviews/<%= i._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
+              <a href="/mens/<%= item.id %>/reviews/<%= i.id %>/edit">Edit Review</a>
             <% } %>
           </td>
         </tr>

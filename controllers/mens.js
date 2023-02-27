@@ -7,7 +7,8 @@ module.exports = {
   show,
   createReview,
   delete: deleteReview,
-  addToCart
+  addToCart,
+  editReview
 };
   
 
@@ -96,4 +97,17 @@ function addToCart(req, res) {
       });
     });
   });
+}
+
+function editReview(req, res) {
+  let id = req.params.id;
+  let reviewID = req.params.review_id;
+  console.log(id);
+  Item.findById(id, async function(err, item) {
+    console.log(item);
+    console.log("This is the review ID: ", reviewID);
+    const reviewToEdit = await item.reviews.find(review => review._id == reviewID);
+    console.log("This is the review ", reviewToEdit);
+    res.render('mens/edit', { title: 'Edit Review', item});
+  }); 
 }
