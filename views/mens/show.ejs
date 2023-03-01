@@ -61,19 +61,19 @@
     </thead>
     <tbody>
       <% let total = 0 %>
-      <% item.reviews.forEach(function(i) { %>
-        <% total += i.rating %>
+      <% item.reviews.forEach(function(review) { %>
+        <% total += review.rating %>
         <tr>
-          <td class="review-user"><img alt="avatar" src="<%= i.userAvatar %>" referrerpolicy="no-referrer" ><%= i.userName %></td>
-          <td><%= i.createdAt.toLocaleDateString() %></td>
-          <td><%= i.content %></td>
-          <td><%= i.rating %></td>
+          <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
+          <td><%= review.createdAt.toLocaleDateString() %></td>
+          <td><%= review.content %></td>
+          <td><%= review.rating %></td>
           <td>
-            <% if (user?._id.equals(i.user)) { %>
-              <form action="/mens/reviews/<%= i._id %>?_method=DELETE" method="POST">
+            <% if (user?._id.equals(review.user)) { %>
+              <form action="/mens/reviews/<%= review._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
-              <a href="/mens/<%= item.id %>/reviews/<%= i.id %>/edit">Edit Review</a>
+              <a href="/mens/<%= item.id %>/reviews/<%= review.id %>/edit">Edit Review</a>
             <% } %>
           </td>
         </tr>

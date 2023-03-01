@@ -8,7 +8,8 @@ module.exports = {
   createReview,
   delete: deleteReview,
   addToCart,
-  editReview
+  showReview,
+  update
 };
   
 
@@ -99,15 +100,28 @@ function addToCart(req, res) {
   });
 }
 
-function editReview(req, res) {
+function showReview(req, res) {
   let id = req.params.id;
   let reviewID = req.params.review_id;
-  console.log(id);
-  Item.findById(id, async function(err, item) {
-    console.log(item);
-    console.log("This is the review ID: ", reviewID);
-    const reviewToEdit = await item.reviews.find(review => review._id == reviewID);
-    console.log("This is the review ", reviewToEdit);
-    res.render('mens/edit', { title: 'Edit Review', item});
+  Item.findById(id, function(err, item) {
+    const reviewToEdit = item.reviews.find(review => review._id == reviewID);
+    res.render('mens/edit', { title: 'Edit Review', item, reviewToEdit});
   }); 
+}
+
+function update(req, res) {
+  let id = req.params.id;
+  let reviewID = req.params.review_id;
+  let content = req.body.content;
+  let rating = req.body.rating;
+  console.log("This is the req body:", content, rating);
+  Item.findById(id, function(err, item) {
+    const reviewToEdit = item.reviews.find(review => review._id == reviewID);
+    reviewToEdit.content = req.body.content;
+    reviewToEdit.rating = req.body.rating;
+    item.save(function(err) {
+      if (err) return res.redirect('/mens');
+      return res.redirect(`/mens/${req.params.id}`);
+    });
+  });
 }

@@ -7,15 +7,32 @@
       <tr>
         <th></th>
         <th>Title:</th>
+        <th>Price:</th>
       </tr>
     </thead>
     <tbody>
+      <% let total = 0 %>
       <% user.cart.forEach(function(i) { %>
+        <% total += i.price %>
         <tr>
           <td class="cartPicture"><img src="<%= i.imageOne %>"></td>
           <td><%= i.title %></td>
+          <td><%= i.price %></td>
+          <td>
+            <form action="/mens/removeItem" method="POST">
+              <button type="submit">Remove item</button>
+            </form>
+          </td>
         </tr>
         <% }); %>
+        <tr>
+          <td colspan="3"></td>
+          <td>
+            <strong>
+              Total: <%= total.toFixed(1) %>
+            </strong>
+          </td>
+        </tr>
     </tbody>
   </table>
 

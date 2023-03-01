@@ -9,7 +9,7 @@ router.get('/', mensCtrl.index);
 router.get('/:id', mensCtrl.show);
 
 // Edit review
-router.get('/:id/reviews/:review_id/edit', ensureLoggedIn, mensCtrl.editReview)
+router.get('/:id/reviews/:review_id/edit', ensureLoggedIn, mensCtrl.showReview)
 // POST /mens/:id/reviews
 router.post('/:id/reviews', ensureLoggedIn, mensCtrl.createReview);
 // DELETE /reviews/:id
@@ -19,6 +19,6 @@ router.delete('/reviews/:id', ensureLoggedIn, mensCtrl.delete);
 router.post('/:id/cart', mensCtrl.addToCart);
 
 // PUT for editing review
-// router.put();
+router.put('/:id/reviews/:review_id/edit', ensureLoggedIn, mensCtrl.update);
 
 module.exports = router;
