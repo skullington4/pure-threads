@@ -6,4 +6,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 /* GET home page. */
 router.get('/', cartsCtrl.index);
 
+// DELETE /reviews/:id
+router.delete('/:id', ensureLoggedIn, cartsCtrl.delete);
+
 module.exports = router;

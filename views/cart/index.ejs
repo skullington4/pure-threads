@@ -19,7 +19,7 @@
           <td><%= i.title %></td>
           <td><%= i.price %></td>
           <td>
-            <form action="/mens/removeItem" method="POST">
+            <form action="/cart/<%= i._id %>?_method=DELETE" method="POST">
               <button type="submit">Remove item</button>
             </form>
           </td>
