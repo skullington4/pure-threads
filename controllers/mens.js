@@ -114,7 +114,6 @@ function update(req, res) {
   let reviewID = req.params.review_id;
   let content = req.body.content;
   let rating = req.body.rating;
-  console.log("This is the req body:", content, rating);
   Item.findById(id, function(err, item) {
     const reviewToEdit = item.reviews.find(review => review._id == reviewID);
     reviewToEdit.content = req.body.content;

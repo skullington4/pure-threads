@@ -1,12 +1,14 @@
 const Item = require('../models/item');
 
 module.exports = {
-    index,
-    show,
-    createReview,
-    deleteReview,
-    addToCart
-  };
+  index,
+  show,
+  createReview,
+  delete: deleteReview,
+  addToCart,
+  showReview,
+  update
+};
   
 function index(req, res) {
   Item.find({ department:'Womens'}, function(err, items) {
@@ -65,6 +67,31 @@ function addToCart(req, res) {
       user.save(function(err) {
         res.redirect(`/womens/${id}`);
       });
+    });
+  });
+}
+
+function showReview(req, res) {
+  let id = req.params.id;
+  let reviewID = req.params.review_id;
+  Item.findById(id, function(err, item) {
+    const reviewToEdit = item.reviews.find(review => review._id == reviewID);
+    res.render('womens/edit', { title: 'Edit Review', item, reviewToEdit});
+  }); 
+}
+
+function update(req, res) {
+  let id = req.params.id;
+  let reviewID = req.params.review_id;
+  let content = req.body.content;
+  let rating = req.body.rating;
+  Item.findById(id, function(err, item) {
+    const reviewToEdit = item.reviews.find(review => review._id == reviewID);
+    reviewToEdit.content = req.body.content;
+    reviewToEdit.rating = req.body.rating;
+    item.save(function(err) {
+      if (err) return res.redirect('/mens');
+      return res.redirect(`/womens/${req.params.id}`);
     });
   });
 }
