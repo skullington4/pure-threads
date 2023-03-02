@@ -12,7 +12,7 @@ router.get('/:id', womensCtrl.show);
 // POST /mens/:id/reviews
 router.post('/:id/reviews', ensureLoggedIn, womensCtrl.createReview);
 // DELETE /reviews/:id
-router.delete('/reviews/:id', ensureLoggedIn, womensCtrl.deleteReview);
+router.delete('/reviews/:id', ensureLoggedIn, womensCtrl.delete);
 
 // Add to cart
 router.post('/:id/cart', womensCtrl.addToCart);
