@@ -26,7 +26,6 @@ module.exports = {
         req.user.save();
       }
     }
-
     res.redirect('/cart', 302, { title: `Cart`});
 }
 
@@ -38,6 +37,5 @@ function checkout(req, res) {
   user.cart = [];
   user.save();
   res.redirect('/cart', 302, { title: `Cart`});
-
 }
 

@@ -19,10 +19,7 @@ function index(req, res) {
 
 function show(req, res) {
   Item.findById(req.params.id, function(err, item) {
-    res.render('womens/show', {
-      title: 'Item Detail',
-      item
-    });
+    res.render('womens/show', {title: 'Item Detail', item});
   });
 }
 
