@@ -1,5 +1,8 @@
 const User = require('../models/user');
 const Item = require('../models/item');
+const mongoose = require('mongoose');
+// Shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema;
 
 
 module.exports = {
@@ -29,12 +32,13 @@ module.exports = {
 
 function checkout(req, res) {
   const user = req.user;
-  let newOrder = [];
-  console.log(user.cart);
-  while (user.cart.length > 0) {
-    newOrder.push(user.cart.pop());
-  }
-  user.order.items.push(newOrder);
+  const newOrder = {
+    _id: new mongoose.Types.ObjectId,
+    items: Array
+  };
+  newOrder.items = user.cart;
+  user.orders.push(newOrder);
+  user.cart = [];
   user.save();
   res.redirect('/cart', 302, { title: `Cart`});
 

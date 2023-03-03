@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<h2>Welcome to Account</h2>
+<% user.orders.forEach(function(order) { %>
+    <div><%= order._id %></div>
+
+    <% order.forEach(function(i) { %>
+        <% let total = 0 %>
+        <% total += i.price %>
+        <section class="cartDisplay">
+        <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
+        <div><%= i.title %></div>
+        <div>Price $<%= i.price %></div>
+        <br><br><br><br><br><br>
+        </section>
+        <div>
+        <strong class="total">
+            Total: $<%= total.toFixed(1) %>
+        </strong>
+        </div>
+    <% }); %>
+
+<% }); %>
+<%- include('../partials/footer') %>

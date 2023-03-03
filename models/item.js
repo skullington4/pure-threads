@@ -47,11 +47,11 @@ const itemSchema = new Schema({
   },
   color: {
     type: String,
-    enum: ['Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red', 'Pink']
+    enum: ['Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red', 'Pink', 'Gray']
   },
   secondaryColor: {
     type: String,
-    enum: ['', 'Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red', 'Pink']
+    enum: ['', 'Black', 'White', 'Blue', 'Green', 'Yellow', 'Purple', 'Red', 'Pink', 'Gray']
   },
   brand: {
     type: String

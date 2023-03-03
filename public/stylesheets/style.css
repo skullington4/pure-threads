@@ -75,3 +75,7 @@ a {
   padding: 5px;  
   height: 100vh;
 }
+
+.showPicture img {
+  height: 600px;
+}

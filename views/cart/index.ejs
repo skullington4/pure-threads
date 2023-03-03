@@ -1,12 +1,10 @@
 <%- include('../partials/header') %>
 
 <h2>Welcome to the Cart</h2>
-
-
 <% let total = 0 %>
 <% user.cart.forEach(function(i) { %>
   <% total += i.price %>
-<section class="cartDisplay">
+  <section class="cartDisplay">
   <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
   <div><%= i.title %></div>
   <div>Price $<%= i.price %></div>
@@ -16,8 +14,8 @@
     </form>
   </div>
   <br><br><br><br><br><br>
-<% }); %>
 </section>
+<% }); %>
 <div>
   <strong class="total">
     Total: $<%= total.toFixed(1) %>
@@ -27,5 +25,4 @@
 <form action="/cart/checkout" method="POST">
   <button type="submit">Check out</button>
 </form>
-
 <%- include('../partials/footer') %>
