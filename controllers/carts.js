@@ -32,10 +32,7 @@ module.exports = {
 
 function checkout(req, res) {
   const user = req.user;
-  const newOrder = {
-    _id: new mongoose.Types.ObjectId,
-    items: Array
-  };
+  const newOrder = {};
   newOrder.items = user.cart;
   user.orders.push(newOrder);
   user.cart = [];
