@@ -11,6 +11,12 @@ const userSchema = new Schema({
   avatar: String,
   cart: {
     type: Array
+  },
+  orders: {
+    type: Array,
+    items: {
+      type: Array
+    }
   }
 }, {
   timestamps: true

@@ -2,23 +2,19 @@
 
 <h2>Men's department</h2>
 
+<div class="indexPage">
 
-<table id="list">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Title:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% items.forEach(function(i) { %>
-        <tr>
-          <td class="cartPicture"><a href="/mens/<%= i._id %>" class="indexPictures"><img src="<%= i.imageOne %>"></a></td>
-          <td><a href="/mens/<%= i._id %>"><%= i.title %></a></td>
-        </tr>
-        <% }); %>
-    </tbody>
-</table>
+  <% items.forEach(function(i) { %>
+      <div class="cartPicture">
+          <a href="/mens/<%= i._id %>" class="indexPictures">
+          <img src="<%= i.imageOne %>"></a>
+        
+        <div><a href="/mens/<%= i._id %>"><%= i.title %></a></div>
+        <div>Price: $<%= i.price %></div>
+
+      </div>
+    <% }); %>
+</div>
 
 
 <%- include('../partials/footer') %>

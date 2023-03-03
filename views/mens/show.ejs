@@ -1,29 +1,14 @@
 <%- include('../partials/header') %>
 
-<table id="list">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Title:</th>
-        <th>Price:</th>
-        <th>Description:</th>
-        <th>Size:</th>
-        <th>Color:</th>
-        <th>Brand:</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="cartPicture"><img src="<%= item.imageOne %>"></td>
-          <td ><%= item.title %></td>
-          <td>$<%= item.price %></td>
-          <td><%= item.description %></td>
-          <td><%= item.size %></td>
-          <td><%= item.color %></td>
-          <td><%= item.brand %></td>
-        </tr>
-    </tbody>
-</table>
+<br><br><br><br>
+          <div class="cartPicture"><img src="<%= item.imageOne %>"></div><br>
+          <div><%= item.title %></div><br>
+          <div>Price: $<%= item.price %></div><br>
+          <div>Description: <%= item.description %></div><br>
+          <div>Size: <%= item.size %></div><br>
+          <div>Color: <%= item.color %></div><br>
+          <div>Brand: <%= item.brand %></div>
+
 
 <% if (user) { %>
   <form action="/mens/<%= item._id %>/cart" method="POST">

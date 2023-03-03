@@ -1,10 +1,11 @@
 const User = require('../models/user');
 const Item = require('../models/item');
-const user = require('../models/user');
+
 
 module.exports = {
     index,
-    delete: deleteItem
+    delete: deleteItem,
+    checkout
   };
   
   function index(req, res) {
@@ -24,6 +25,18 @@ module.exports = {
     }
 
     res.redirect('/cart', 302, { title: `Cart`});
+}
+
+function checkout(req, res) {
+  const user = req.user;
+  let newOrder = [];
+  console.log(user.cart);
+  while (user.cart.length > 0) {
+    newOrder.push(user.cart.pop());
+  }
+  user.order.items.push(newOrder);
+  user.save();
+  res.redirect('/cart', 302, { title: `Cart`});
 
 }
 

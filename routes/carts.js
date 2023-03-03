@@ -9,4 +9,6 @@ router.get('/', cartsCtrl.index);
 // DELETE /reviews/:id
 router.delete('/:id', ensureLoggedIn, cartsCtrl.delete);
 
+router.post('/checkout', ensureLoggedIn, cartsCtrl.checkout);
+
 module.exports = router;

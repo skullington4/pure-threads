@@ -2,39 +2,30 @@
 
 <h2>Welcome to the Cart</h2>
 
-<table id="list">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Title:</th>
-        <th>Price:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let total = 0 %>
-      <% user.cart.forEach(function(i) { %>
-        <% total += i.price %>
-        <tr>
-          <td class="cartPicture"><img src="<%= i.imageOne %>"></td>
-          <td><%= i.title %></td>
-          <td><%= i.price %></td>
-          <td>
-            <form action="/cart/<%= i._id %>?_method=DELETE" method="POST">
-              <button type="submit">Remove item</button>
-            </form>
-          </td>
-        </tr>
-        <% }); %>
-        <tr>
-          <td colspan="3"></td>
-          <td>
-            <strong>
-              Total: <%= total.toFixed(1) %>
-            </strong>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
+<% let total = 0 %>
+<% user.cart.forEach(function(i) { %>
+  <% total += i.price %>
+<section class="cartDisplay">
+  <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
+  <div><%= i.title %></div>
+  <div>Price $<%= i.price %></div>
+  <div>
+    <form action="/cart/<%= i._id %>?_method=DELETE" method="POST">
+      <button type="submit">Remove item</button>
+    </form>
+  </div>
+  <br><br><br><br><br><br>
+<% }); %>
+</section>
+<div>
+  <strong class="total">
+    Total: $<%= total.toFixed(1) %>
+  </strong>
+</div>
+
+<form action="/cart/checkout" method="POST">
+  <button type="submit">Check out</button>
+</form>
 
 <%- include('../partials/footer') %>

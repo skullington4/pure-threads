@@ -1,4 +1,5 @@
 const Item = require('../models/item');
+const User = require('../models/user');
 
 module.exports = {
   index,
@@ -30,7 +31,7 @@ function deleteReview(req, res, next) {
     'reviews._id': req.params.id,
     'reviews.user': req.user._id
   }).then(function(movie) {
-    if (!item) return res.redirect('/items');
+    if (!item) return res.redirect('/womans');
     item.reviews.remove(req.params.id);
     item.save().then(function() {
       res.redirect(`/mens/${item._id}`);
