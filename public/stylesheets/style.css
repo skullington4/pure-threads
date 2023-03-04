@@ -15,11 +15,15 @@ a {
 
 
 nav {
-  background-color: lavender;
+  color: white;
+  background-color: rgb(40,16,74);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 60px;
+  height: 60px; 
+}
+nav > a {
+  color: white;
 }
 
 .login {
@@ -70,12 +74,16 @@ a {
 .indexPage {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   margin: 2%;
   padding: 5px;  
   height: 100vh;
 }
 
 .showPicture img {
+  height: 600px;
+}
+
+.logo {
   height: 600px;
 }
