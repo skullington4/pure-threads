@@ -1,6 +1,6 @@
 # pure-threads
 https://pure-threads.herokuapp.com
-This website is a clothing retail store. You are able to log in using your google account, browse items, rate them, put them in the cart and purchase your cart!
+This website is a clothing retail store. You are able to log in using your google account, browse items, rate items, add items to the cart and purchase your items!
 
 Screenshots: 
 
