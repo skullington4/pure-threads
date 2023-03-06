@@ -2,6 +2,8 @@
 https://pure-threads.herokuapp.com
 This website is a clothing retail store. You are able to log in using your google account, browse items, rate items, add items to the cart and purchase your items!
 
+Technologies used: Node.JS and Express.js
+
 Screenshots: 
 
 <img width="1243" alt="Screen Shot 2023-03-05 at 10 00 43 PM" src="https://user-images.githubusercontent.com/30698051/223010727-5b0a49c8-c4ae-4c48-a05f-70335fda95b3.png">
