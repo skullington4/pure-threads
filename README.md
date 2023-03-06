@@ -15,3 +15,5 @@ Screenshots:
 
 Future improvements:
 I would like to add some CSS improvements like hover transitions.
+Search bar
+Real working cart
