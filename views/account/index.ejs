@@ -8,9 +8,8 @@
         </strong>
     </div>
 
-    <% let total %>
+    <% let total = 0 %>
     <% order.items.forEach(function(i) { %>
-        <% total = 0 %>
         <% total += i.price %>
         <section class="cartDisplay">
         <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
