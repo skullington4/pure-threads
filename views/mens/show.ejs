@@ -1,22 +1,25 @@
 <%- include('../partials/header') %>
 
-<br><br><br><br>
+        <div class="itemCard">
           <div class="showPicture"><img src="<%= item.imageOne %>"></div><br>
-          <div><%= item.title %></div><br>
-          <div>Price: $<%= item.price %></div><br>
-          <div>Description: <%= item.description %></div><br>
-          <div>Size: <%= item.size %></div><br>
-          <div>Color: <%= item.color %></div><br>
-          <div>Brand: <%= item.brand %></div>
+          <div class="itemDescription">
+            <div><%= item.title %></div><br>
+            <div>Price: $<%= item.price %></div><br>
+            <div>Description: <%= item.description %></div><br>
+            <div>Size: <%= item.size %></div><br>
+            <div>Color: <%= item.color %></div><br>
+            <div>Brand: <%= item.brand %></div>
+          </div>
+        </div>
 
-
+<div class="bottomHalf">
 <% if (user) { %>
   <form action="/mens/<%= item._id %>/cart" method="POST">
     <button type="submit">Add to Cart</button>
   </form>
 <% } %>
 
-<br><br><h2>Reviews</h2>
+<h2>Reviews</h2>
 <% if (user) { %>
   <form id="add-review-form" method="POST"
     action="/mens/<%= item._id %>/reviews">
@@ -77,5 +80,6 @@
   <h5>No Reviews Yet</h5>
 <% } %>
 
+</div>
 
 <%- include('../partials/footer') %>

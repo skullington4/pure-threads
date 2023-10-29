@@ -5,7 +5,6 @@
 }
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -85,9 +84,32 @@ a {
 }
 
 .showPicture img {
-  height: 600px;
+  height: 50vmin;
+  width: 50vmin;
+  margin: auto;
 }
 
 .logo {
-  height: 600px;
+  display: flex;
+  height: 100vmin;
+  width: 100vmin;
+  margin: auto;
+}
+
+.itemCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 5vmin;
+  padding: 5vmin;
+}
+
+.bottomHalf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vmin;
+  padding: 5vmin;
 }
