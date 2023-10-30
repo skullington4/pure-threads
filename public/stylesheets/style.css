@@ -144,4 +144,14 @@ a {
   padding: 8vmin;
   justify-content: center;
   align-items: center;
+  border: 2px solid black;
+
+}
+
+.accItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vmin;
 }

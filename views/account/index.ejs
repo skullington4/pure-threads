@@ -11,9 +11,11 @@
     <% let total = 0 %>
     <% order.items.forEach(function(i) { %>
         <% total += i.price %>
-        <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
-        <div><%= i.title %></div>
-        <div>Price $<%= i.price %></div>
+        <div class="accItem">
+            <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
+            <div><%= i.title %></div>
+            <div>Price $<%= i.price %></div>
+        </div>
 
         <% }); %>
         <div>
@@ -21,6 +23,7 @@
             Total: $<%= total.toFixed(1) %>
         </strong>
         </div>
+
     </div>
 <% }); %>
 <%- include('../partials/footer') %>
