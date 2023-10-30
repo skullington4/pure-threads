@@ -20,11 +20,15 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 5vmin; 
+  height: 7vmin; 
   width: 100%;
 }
 nav > a {
   color: white;
+  text-decoration: none;
+  font-size: 2vmin;
+  font-weight: bold;
+  padding: 1vmin;
 }
 
 .login {
