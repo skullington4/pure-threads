@@ -20,7 +20,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 7vmin; 
+  height: 5vmin; 
   width: 100%;
 }
 nav > a {
@@ -158,4 +158,34 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 5vmin;
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    color: white;
+    background-color: rgb(40,16,74);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vmin; 
+    width: 100%;
+  }
+  nav > a {
+    color: white;
+    text-decoration: none;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 1vmin;
+  }
+
+  .indexPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center; 
+    margin: 2%;
+    padding: 5px;  
+    height: 100vh;
+  }
+
 }
