@@ -1,28 +1,26 @@
 <%- include('../partials/header') %>
 
-<h2>Welcome to Account</h2>
+<h2 class="depName">Welcome to Account</h2>
 <% user.orders.forEach(function(order) { %>
-    <div>
+    <div class="accountDisplay">
         <strong>
         Order #<%= order._id %>
         </strong>
-    </div>
+    
 
     <% let total = 0 %>
     <% order.items.forEach(function(i) { %>
         <% total += i.price %>
-        <section class="cartDisplay">
         <div class="cartPicture"><img src="<%= i.imageOne %>"></div>
         <div><%= i.title %></div>
         <div>Price $<%= i.price %></div>
-        <br><br>
-        </section>
+
         <% }); %>
         <div>
         <strong class="total">
             Total: $<%= total.toFixed(1) %>
         </strong>
         </div>
-        <br><br><br><br><br>
+    </div>
 <% }); %>
 <%- include('../partials/footer') %>

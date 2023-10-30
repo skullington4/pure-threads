@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Welcome to the Cart</h2>
+<h2 class="depName">Welcome to the Cart</h2>
 <% let total = 0 %>
 <% user.cart.forEach(function(i) { %>
   <% total += i.price %>
@@ -13,16 +13,20 @@
       <button type="submit">Remove item</button>
     </form>
   </div>
-  <br><br><br><br><br><br>
 </section>
-<% }); %>
-<div>
-  <strong class="total">
-    Total: $<%= total.toFixed(1) %>
-  </strong>
-</div>
 
-<form action="/cart/checkout" method="POST">
-  <button type="submit">Check out</button>
-</form>
+<% }); %>
+<div class="cartTotal">
+
+
+  <div class="total">
+    <strong>
+      Total: $<%= total.toFixed(1) %>
+    </strong>
+  </div>
+  
+  <form action="/cart/checkout" method="POST">
+    <button type="submit">Check out</button>
+  </form>
+</div>
 <%- include('../partials/footer') %>
