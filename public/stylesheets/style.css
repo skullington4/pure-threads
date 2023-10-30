@@ -81,6 +81,8 @@ a {
 
 .cartPicture {
   display: flex;
+  border: solid 2px gray;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 2);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -201,4 +203,25 @@ a {
     height: 100vh;
   }
 
+  .cartPicture img {
+    height: 60vmin;
+    width: fit-content;
+  }
+  
+  .cartPicture {
+    border: solid 2px gray;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vmin;
+    width: 70vmin;
+    margin: 20px;
+    
+  }
+
+  .indexPictures img {
+    width: 69vmin;
+  }
 }
