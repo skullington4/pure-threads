@@ -7,12 +7,23 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+
 }
 
 a {
   color: #00B7FF;
 }
 
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 3vmax;
+
+  border-color: gray;
+}
 
 nav {
   color: white;
@@ -22,6 +33,7 @@ nav {
   align-items: center;
   height: 5vmin; 
   width: 100%;
+  
 }
 nav > a {
   color: white;
@@ -29,6 +41,7 @@ nav > a {
   font-size: 2vmin;
   font-weight: bold;
   padding: 1vmin;
+  
 }
 
 .login {
@@ -63,15 +76,16 @@ a {
 }
 
 .cartPicture img {
-  height: 200px;
+  height: 30vmin;
 }
 
 .cartPicture {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
-  width: 200px;
+  align-items: center;
+  height: 40vmin;
+  width: 40vmin;
   margin: 20px;
   
 }
@@ -79,8 +93,8 @@ a {
 .indexPage {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-gap: 50px;
+  grid-template-rows: auto;
+  grid-gap: 7vmin;
   align-items: center;
   justify-items: center; 
   margin: 2%;
@@ -115,8 +129,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5vmin;
-  padding: 5vmin;
+
 }
 
 .depName {
